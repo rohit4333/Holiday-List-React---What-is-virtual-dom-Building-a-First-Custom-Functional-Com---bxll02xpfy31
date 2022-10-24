@@ -40,12 +40,12 @@ class App extends Component {
   render() {
     return (
       <div id="main">
-        <ul>
+        <ol>
         {this.cityList.map((value, index)=>(
           <li key={"location"+(++index)}>{value.name}</li>
         ))}
         
-        </ul>
+        </ol>
       </div>
     )
   }
