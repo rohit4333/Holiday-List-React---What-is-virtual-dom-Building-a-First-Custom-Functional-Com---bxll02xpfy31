@@ -1,5 +1,5 @@
 import React, { Component, useState } from "react";
-import "../styles/App.css";
+// import "../styles/App.css";
 
 class App extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class App extends Component {
       { name: "Museum Island", country: "Germany" },
       { name: "Munnar", country: "India" },
       { name: "Leh Ladakh", country: "India" },
-      { name: "Goa", country: "India" },
+
       { name: "Agra", country: "India" },
       { name: "Dalhousie", country: "India" },
       { name: "Coorg", country: "India" },
@@ -38,18 +38,15 @@ class App extends Component {
   }
 
   render() {
-    const tmp = cityList.filter((value) => value.country === "India");
-    const set = new Set();
-    tmp.forEach((city) => {
-      set.add(city);
-    });
+    const tmp = this.cityList.filter((value) => value.country === "India");
+
     return (
       <div id="main">
-        <ul>
-          {set.map((value, index) => (
+        <ol>
+          {tmp.map((value, index) => (
             <li key={"location" + ++index}>{value.name}</li>
           ))}
-        </ul>
+        </ol>
       </div>
     );
   }
